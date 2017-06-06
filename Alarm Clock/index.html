@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/normalize.css">
+<title></title>
+</head>
+<body onload="clock()">
+<audio id="alarm-sound" autoplay loop><source src="#" type=""></audio>
+    <div class="container">
+        <div class="item1">
+            <div id="p"></div>
+            <div id="AP"></div>
+        </div>
+        <div class="item2">
+            <div><input type="text" id="alarm-hours"></div>
+            <div><input type="text" id="alarm-minutes"></div>
+            <div><input type="text" id="alarm-seconds"></div>
+        </div>
+        <div class="item3">
+            <div><button id="b1" type="button" name="set-alarm" onclick="fetchAlarminputs();">Set Alarm</button></div>
+            <div><button id="b2" type="button" name="stop-alarm" onclick="stopalarm();">Snooze</button></div>
+        </div>
+    </div>
+
+<script>
+var today = new Date ();
+var h, m, s;
+function clock() {
+    var today = new Date();
+    h = today.getHours();
+    m = today.getMinutes();
+    s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    var half;
+    if (h > 12) {half = "PM";
+    h = h - 12;
+    }
+    else {half = "AM";}
+    document.getElementById('p').innerHTML =
+    h + ":" + m + ":" + s + " " + half;
+    var t = setTimeout(clock, 500);
+    matchTimes();
+
+    // document.getElementById('AP').innerHTML= half;
+}
+
+function checkTime(i) {
+    if (i < 10) {i = "0" + i;}  // add zero in front of numbers < 10
+    return i;
+}
+
+// Alarm 
+var alarmHoursInput, alarmMinutesInput, alarmSecondsInput;
+
+function fetchAlarminputs (){
+    alarmHoursInput = document.getElementById('alarm-hours').value;
+    alarmMinutesInput = document.getElementById('alarm-minutes').value;
+    alarmSecondsInput = document.getElementById('alarm-seconds').value;
+    //alert (alarmHoursInput+ alarmMinutesInput+ alarmSecondsInput);
+}
+
+function matchTimes () {
+    if (alarmHoursInput == h && alarmMinutesInput == m && alarmSecondsInput == s) {
+        // alert ('yes ring');
+        document.getElementById('alarm-sound').src="alarm1.mp3";
+    };
+}
+
+function stopalarm () {
+    document.getElementById('alarm-sound').src="#";
+}
+
+
+</script>
+</body>
+</html>

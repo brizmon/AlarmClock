@@ -1,0 +1,67 @@
+@font-face {
+    font-family: 'nexa_boldregular';
+    src: url('nexa_bold-webfont.woff2') format('woff2'),
+         url('nexa_bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+* {
+	box-sizing: border-box;
+}
+body {
+	font-family: 'nexa_boldregular';
+	-webkit-font-smoothing: antialiased;
+	background-color: #ECF0F1;
+	color: #fff;
+}
+.item1 {
+	width: 900px;
+    height: 156px;
+    margin: 0 auto;
+    margin-top: 210px;
+}
+.item2 {
+	width: 450px;
+	margin: 0 auto;
+}
+.item3 {
+	width: 200px;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+.item2 input {
+	width: 150px;
+	height: 50px;
+}
+.item2, .item3 {
+	display: flex;
+}
+#p {
+	color: #F4D03F;
+	font-size: 150px;
+	text-shadow: 11px -3px #fff;
+ }
+ button {
+ 	width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+ }
+ #b1 {
+ 	background-color: #BF55EC;
+ 	box-shadow: 4px -4px #000;
+ 	margin-right: 15px;
+ }
+ #b2 {
+ 	background-color: #19B5FE;
+ 	box-shadow: 4px -4px #000;
+ }
+ /*#AP {
+ 	position: absolute;
+    top: 210px;
+    font-size: 150px;
+    right: 242px;
+    color: red;
+}*/
+
